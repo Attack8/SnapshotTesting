@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "snapshottesting",
+  "version": "${version}",
+  "name": "SnapshotTesting",
+  "description": "",
+  "authors": [
+    "attackeight"
+  ],
+  "contact": {
+    "attackeight": "attackeight@gmail.com"
+  },
+  "license": "MIT",
+  "icon": "assets/snapshottesting/icon.png",
+  "environment": "server",
+  "entrypoints": {
+    "fabric-datagen": [
+      "dev.attackeight.snapshottesting.client.SnapshotTestingDataGenerator"
+    ],
+    "main": [
+      "dev.attackeight.snapshottesting.SnapshotTesting"
+    ]
+  },
+  "mixins": [
+    "snapshottesting.mixins.json",
+    {
+      "config": "snapshottesting.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
